@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>252</width>
-    <height>309</height>
+    <width>520</width>
+    <height>335</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,35 +21,18 @@
        <string>Libro</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Título:</string>
-         </property>
-        </widget>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="editorial_lineEdit"/>
        </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
+       <item row="5" column="0" colspan="2">
+        <widget class="QPushButton" name="agregar_inicio_pushButton">
          <property name="text">
-          <string>Autor:</string>
+          <string>Agregar Inicio</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_2"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Publicado:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QSpinBox" name="spinBox"/>
+        <widget class="QLineEdit" name="autor_lineEdit"/>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_4">
@@ -58,18 +41,59 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_3"/>
-       </item>
        <item row="4" column="0" colspan="2">
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="agregar_final_pushButton">
          <property name="text">
-          <string>Agregar</string>
+          <string>Agregar Final</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Título:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Autor:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QSpinBox" name="publicado_spinBox">
+         <property name="minimum">
+          <number>2000</number>
+         </property>
+         <property name="maximum">
+          <number>2020</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="titulo_lineEdit"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Publicado:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="2">
+        <widget class="QPushButton" name="monstrar_pushButton">
+         <property name="text">
+          <string>Mostrar</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPlainTextEdit" name="salida"/>
     </item>
    </layout>
   </widget>
@@ -78,7 +102,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>252</width>
+     <width>520</width>
      <height>22</height>
     </rect>
    </property>
