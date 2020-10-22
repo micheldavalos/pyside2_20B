@@ -1,4 +1,5 @@
 from .libro import Libro
+import json
 
 class Libreria:
     def __init__(self):
@@ -18,6 +19,25 @@ class Libreria:
         return "".join(
             str(libro) + '\n' for libro in self.__libros
         ) 
+
+    def guardar(self, ubicacion):
+        try:       
+            with open(ubicacion, 'w') as archivo:
+                lista = [libro.to_dict() for libro in self.__libros]
+                print(lista)
+                json.dump(lista, archivo, indent=5)
+            return 1
+        except:
+            return 0
+    
+    def abrir(self, ubicacion):
+        try:
+            with open(ubicacion, 'r') as archivo:
+                lista = json.load(archivo)
+                self.__libros = [Libro(**libro) for libro in lista]
+            return 1
+        except:
+            return 0
 
 # l01 = Libro(titulo="Programación", autor="Deitel", publicado=2020, editorial="Pearson")
 # l02 = Libro("Python", "Guido", "2010", "Planeta")
