@@ -1,0 +1,20 @@
+[
+     {
+          "titulo": "1",
+          "autor": "1",
+          "publicado": 2000,
+          "editorial": "1"
+          
+     {
+          "titulo": "2",
+          "autor": "2",
+          "publicado": 2000,
+          "editorial": "2"
+     },
+     {
+          "titulo": "3",
+          "autor": "3",
+          "publicado": 2000,
+          "editorial": "3"
+     }
+]
