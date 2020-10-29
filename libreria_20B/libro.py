@@ -14,6 +14,22 @@ class Libro:
             'Publicado: ' + str(self.__publicado) + '\n' +
             'Editorial: ' + self.__editorial + '\n'
         )
+
+    @property
+    def titulo(self):
+        return self.__titulo
+
+    @property
+    def autor(self):
+        return self.__autor
+    
+    @property
+    def publicado(self):
+        return self.__publicado
+
+    @property
+    def editorial(self):
+        return self.__editorial
     
     def to_dict(self):
         return {
