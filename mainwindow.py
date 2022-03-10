@@ -22,8 +22,22 @@ class MainWindow(QMainWindow):
         self.ui.mostrar_tabla_pushButton.clicked.connect(self.mostrar_tabla)
         self.ui.buscar_pushButton.clicked.connect(self.buscar_titulo)
 
+
+    def inserta_fila(self, libro: Libro, row: int):
+        titulo_widget = QTableWidgetItem(libro.titulo)
+        autor_widget = QTableWidgetItem(libro.autor)
+        publicado_widget = QTableWidgetItem(str(libro.publicado))
+        editorial_widget = QTableWidgetItem(libro.editorial)
+
+        self.ui.tabla.setItem(row, 0, titulo_widget)
+        self.ui.tabla.setItem(row, 1, autor_widget)
+        self.ui.tabla.setItem(row, 2, publicado_widget)
+        self.ui.tabla.setItem(row, 3, editorial_widget)
+
+        
     @Slot()
     def buscar_titulo(self):
+        self.ui.tabla.clear()
         titulo = self.ui.buscar_lineEdit.text()
         encontrado = False
         for libro in self.libreria:
@@ -31,15 +45,7 @@ class MainWindow(QMainWindow):
                 self.ui.tabla.clear()
                 self.ui.tabla.setRowCount(1)
 
-                titulo_widget = QTableWidgetItem(libro.titulo)
-                autor_widget = QTableWidgetItem(libro.autor)
-                publicado_widget = QTableWidgetItem(str(libro.publicado))
-                editorial_widget = QTableWidgetItem(libro.editorial)
-
-                self.ui.tabla.setItem(0, 0, titulo_widget)
-                self.ui.tabla.setItem(0, 1, autor_widget)
-                self.ui.tabla.setItem(0, 2, publicado_widget)
-                self.ui.tabla.setItem(0, 3, editorial_widget)
+                self.inserta_fila(libro, 0)
 
                 encontrado = True
                 return
@@ -62,15 +68,7 @@ class MainWindow(QMainWindow):
 
         row = 0
         for libro in self.libreria:
-            titulo_widget = QTableWidgetItem(libro.titulo)
-            autor_widget = QTableWidgetItem(libro.autor)
-            publicado_widget = QTableWidgetItem(str(libro.publicado))
-            editorial_widget = QTableWidgetItem(libro.editorial)
-
-            self.ui.tabla.setItem(row, 0, titulo_widget)
-            self.ui.tabla.setItem(row, 1, autor_widget)
-            self.ui.tabla.setItem(row, 2, publicado_widget)
-            self.ui.tabla.setItem(row, 3, editorial_widget)
+            self.inserta_fila(libro, row)
 
             row += 1
 
